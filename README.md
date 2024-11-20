@@ -4,11 +4,11 @@ Full-Stack Project
 This is a full-stack project that consists of a frontend built with React and a backend built with Node.js and Express.
 
 Table of Contents
-Project Setup
-Frontend Setup
-Backend Setup
-Running the Project
-Environment Variables
+Project Setup,
+Frontend Setup,
+Backend Setup,
+Running the Project,
+Environment Variables,
 Before setting up both the frontend and backend, make sure you have the following installed:
 
 Node.js (LTS version recommended) - Install Node.js
