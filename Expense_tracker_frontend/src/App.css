@@ -1,0 +1,863 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #040404;
+  color: #ffffff;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.App {
+  text-align: center;
+  padding: 30px;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 18rem;
+  height: 100vh;
+  background-color: #1f2937;
+  border-right: 1px solid #374151;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  margin-left: 18rem;
+  background-color: #111827;
+}
+
+/* App Wrapper */
+.App {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 16rem;
+  height: 100vh;
+  background-color: #1f2937;
+  border-right: 1px solid #374151;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #f3f4f6;
+  margin-bottom: 20px;
+}
+
+/* Dropdown Button Styles */
+.dropdown {
+  position: relative;
+  margin-top: 20px;
+}
+
+.dropdown-btn {
+  background-color: #374151;
+  color: #f3f4f6;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 16px;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-btn:hover {
+  background-color: #4b5563;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background-color: #374151;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+}
+
+.dropdown-menu li {
+  list-style: none;
+}
+
+.dropdown-menu li a {
+  color: #f3f4f6;
+  padding: 12px 20px;
+  display: block;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #2d3748;
+}
+
+/* Show the Dropdown when the button is clicked */
+.dropdown.active .dropdown-menu {
+  display: block;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin-left: 16rem;
+  background-color: #111827;
+}
+
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  background-color: #1f2937;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 900px;
+}
+
+label {
+  font-size: 18px;
+  font-weight: 500;
+  color: #e5e7eb;
+}
+
+input, textarea {
+  padding: 14px 20px;
+  background-color: #374151;
+  border: 1px solid #4b5563;
+  border-radius: 8px;
+  color: #f3f4f6;
+  font-size: 18px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+input:focus, textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 5px rgba(37, 99, 235, 0.5);
+}
+/* Buttons */
+button {
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn-primary {
+  background-color: #2563eb;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #1e40af;
+}
+
+.btn-secondary {
+  background-color: #4b5563;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #2d3748;
+}
+
+.btn-success {
+  background-color: #059669;
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: #2d7b58;
+}
+
+.btn-edit, .btn-delete {
+  margin-right: 10px;
+  font-size: 16px;
+  padding: 12px 18px;
+  border-radius: 8px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  border: none;
+  background-color: #4b5563;
+  color: white;
+  min-width: 50px;
+  height: 40px;
+}
+
+.btn-edit:hover, .btn-delete:hover {
+  background-color: #2d3748;
+}
+
+.btn-edit i {
+  font-size: 20px;
+}
+
+.btn-delete i {
+  font-size: 20px;
+}
+
+/* Expense Table */
+.expense-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 20px;
+  margin: 25px 0;
+  font-size: 18px;
+  text-align: left;
+}
+
+.expense-table th, .expense-table td {
+  border: 1px solid #555;
+  padding: 12px 25px;
+  background-color: #2d3748;
+  color: #f3f4f6;
+}
+
+.expense-table th {
+  background-color: #333;
+  color: white;
+  font-weight: bold;
+}
+
+.expense-table tr:nth-child(even) {
+  background-color: #444;
+}
+
+.expense-table tr:hover {
+  background-color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: static;
+  }
+  .main-content {
+    margin-left: 0;
+    padding: 20px;
+  }
+  form {
+    padding: 20px;
+    max-width: 100%;
+  }
+  .expense-table th, .expense-table td {
+    padding: 8px;
+  }
+}
+
+/* Dropdown button style */
+.btn-dropdown {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-dropdown:hover {
+  background-color: #45a049;
+}
+
+/* Dropdown content */
+.dropdown-content {
+  display: none;
+  flex-direction: column;
+  padding: 10px;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 5px;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+/* Show dropdown content when open */
+.dropdown-content.open {
+  display: flex;
+  opacity: 1;
+  max-height: 500px;
+}
+
+/* Dropdown button item styling */
+.dropdown-content button {
+  background-color: #fff;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.dropdown-content button:hover {
+  background-color: #f0f0f0;
+}
+/* Add Expense */
+.add-expense-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.expense-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+label {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+input, select {
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+button.submit-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+button.submit-button:hover {
+  background-color: #45a049;
+}
+
+/* Update Expense Form */
+.edit-expense-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #1f2937;
+  border-radius: 8px;
+  color: #f3f4f6;
+}
+
+h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  width: 100%;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.form-group input {
+  padding: 10px;
+  border: 1px solid #4b5563;
+  border-radius: 4px;
+  background-color: #2d3748;
+  color: white;
+  font-size: 16px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  width: 100%;
+}
+
+.btn-update, .btn-cancel {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-update {
+  background-color: #059669;
+  color: white;
+  border: none;
+}
+
+.btn-update:hover {
+  background-color: #2d7b58;
+}
+
+.btn-cancel {
+  background-color: #4b5563;
+  color: white;
+  border: none;
+}
+
+.btn-cancel:hover {
+  background-color: #2d3748;
+}
+
+/* Table Styling */
+.expense-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.expense-table th, .expense-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #4b5563;
+}
+
+.expense-table th {
+  background-color: #1f2937;
+  color: white;
+}
+
+.expense-table td {
+  background-color: #2d3748;
+  color: white;
+}
+
+/* Logout Button */
+.logout-button {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: #ff4d4f;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.logout-button:hover {
+  background-color: #e04344;
+}
+
+/* Pie Chart Container */
+.enhanced-piechart-container {
+  text-align: center;
+  margin: 30px auto;
+  max-width: 900px;
+  background: #1e1e2f;
+  border-radius: 65px;
+  padding: 25px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.chart-title {
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.enhanced-piechart-container:hover {
+  transform: scale(1.05);
+  transition: transform 0.4s ease;
+}
+
+.no-data {
+  text-align: center;
+  color: #ff4d4f;
+  font-size: 0.8rem;
+  margin-top: 40px;
+  font-weight: bold;
+}
+.enhanced-piechart-container {
+  height: auto;
+  padding: 30px 20px;
+}
+
+.enhanced-piechart-container {
+  background: #121212;
+  color: #d4d4d8;
+}
+
+@media (max-width: 768px) {
+  .enhanced-piechart-container {
+    padding: 20px;
+    max-width: 10%;
+  }
+  .chart-title {
+    font-size: 1.5rem;
+  }
+}
+
+.sidebar .username {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Update Notification */
+.update-notification {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px;
+  margin: 10px 0;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Delete Modal Styles */
+.delete-modal {
+  padding: 20px;
+  background-color: #1f2937;
+  border-radius: 8px;
+  color: #f3f4f6;
+  text-align: center;
+}
+
+.delete-modal p {
+  margin-bottom: 20px;
+}
+
+.delete-modal .btn-confirm, .delete-modal .btn-cancel {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+.delete-modal .btn-confirm {
+  background-color: #059669;
+  color: white;
+}
+
+.delete-modal .btn-confirm:hover {
+  background-color: #2d7b58;
+}
+
+.delete-modal .btn-cancel {
+  background-color: #4b5563;
+  color: white;
+}
+
+.delete-modal .btn-cancel:hover {
+  background-color: #2d3748;
+}
+
+.delete-modal .modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Edit and Delete Buttons */
+.btn-edit, .btn-delete {
+  margin-right: 10px;
+  font-size: 16px;
+  padding: 12px 18px;
+  border-radius: 8px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  border: none;
+  background-color: #4b5563;
+  color: white;
+  min-width: 50px;
+  height: 40px;
+}
+
+.btn-edit:hover, .btn-delete:hover {
+  background-color: #2d3748;
+}
+
+/* Table Styling */
+.expense-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.expense-table th, .expense-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #4b5563;
+}
+
+.expense-table th {
+  background-color: #1f2937;
+  color: white;
+}
+
+.expense-table td {
+  background-color: #2d3748;
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: static;
+  }
+  .main-content {
+    margin-left: 0;
+    padding: 20px;
+  }
+  form {
+    padding: 20px;
+    max-width: 100%;
+  }
+  .expense-table th, .expense-table td {
+    padding: 8px;
+  }
+}
+
+
+.expense-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 20px;
+  font-size: 18px;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.expense-table th, .expense-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.expense-table th {
+  background-color: #3498db;
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.expense-table td {
+  background-color: #f9f9f9;
+  color: #333;
+  font-size: 18px;
+}
+
+.expense-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.expense-table tr:hover {
+  background-color: #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transform: scale(1.01);
+  transition: all 0.2s ease-in-out;
+}
+
+.expense-table th:first-child, .expense-table td:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.expense-table th:last-child, .expense-table td:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.expense-table th:not(:last-child), .expense-table td:not(:last-child) {
+  border-right: 1px solid #ddd;
+}
+
+.btn-delete {
+  background-color: #4b5563;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.btn-delete:hover {
+  background-color: #ff0000;
+}
+
+.btn-edit {
+  background-color: #4b5563;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.btn-edit:hover {
+  background-color: #3498db;
+}
+
+/* add expense  */
+
+.add-expense-container {
+  width: 200vw;
+  height: 91vh;
+  margin: 0;
+  padding: 20px;
+  background-color: #262947;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.expense-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 80%;
+  max-width: 500px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(173, 0, 0, 0.1);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+
+label {
+  font-weight: bold;
+  font-size: 14px;
+  color: #000;
+}
+
+input, select {
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #000000;
+  width: 100%;
+}
+
+button.submit-button {
+  background-color: #1e804d;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 4px;
+  width: 100%;
+}
+
+button.back-button {
+  background-color: #366bb4;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 4px;
+  width: 50%;
+  margin-top: 20px;
+}
+
+button.submit-button:hover {
+  background-color: #45a049;
+}
+
+button.back-button:hover {
+  background-color: #2d3748;
+}
+
