@@ -1,5 +1,6 @@
 Full-Stack Project
 
+
 This is a full-stack project that consists of a frontend built with React and a backend built with Node.js and Express.
 
 Table of Contents
